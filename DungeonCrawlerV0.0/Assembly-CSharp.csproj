@@ -45,8 +45,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Inventory.cs" />
-     <Compile Include="Assets\Item.cs" />
+     <Compile Include="Assets\src\Inventory.cs" />
+     <Compile Include="Assets\src\Inventory_cell.cs" />
+     <Compile Include="Assets\src\Item.cs" />
+     <Compile Include="Assets\src\Player.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
