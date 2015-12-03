@@ -15,14 +15,6 @@ public class Inventory : MonoBehaviour {
             {
                 test = gameObject.AddComponent<Item>();
                 test.name = "hello, I'm row: " + i + " column: " + j;
-                if (i == 2)
-                {
-                    test.image_type = "consumable";
-                }
-                else
-                {
-                    test.image_type = "weapon";
-                }
                 if(j == 0)
                 {
                     test.image_type = "bow";
@@ -41,16 +33,36 @@ public class Inventory : MonoBehaviour {
                 }
                 if (j == 5)
                 {
-                    test.image_type = "dagger";
+                    
                 }
-                test.is_null = false;
                 inventory_store[i, j] = test;
-                Debug.Log(test.name);
-                Debug.Log(inventory_store[i, j].name);
+                //Debug.Log(test.name);
+                //Debug.Log(inventory_store[i, j].name);
             }
 
         }
     }
+
+    public void add_to_inventory(Item added_item)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 7; j++)
+            {
+                //Debug.Log("...=" + inventory_store[i, j].image_type + "=...");
+                if (String.IsNullOrEmpty(inventory_store[i, j].image_type))
+                {
+                    inventory_store[i, j] = added_item;
+                    //Debug.Log(i + ", " + j);
+                    i = 4;
+                    j = 7;
+                    //Debug.Log("a slot was free");
+                }
+            }
+        }
+        
+    }
+
 
 
     void Start () {

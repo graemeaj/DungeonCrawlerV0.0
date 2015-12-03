@@ -5,7 +5,7 @@ using System.IO;
 
 public class Inventory_cell : MonoBehaviour {
 
-    Item cell_item = new Item();
+    Item cell_item;
     public GameObject player_g_o;
     Player player;
     //GameObject player_game_object;
@@ -16,12 +16,13 @@ public class Inventory_cell : MonoBehaviour {
 
     public void update_inventory_cells()
     {
-        Debug.Log(cell_item.image_type);
-        
-        if (cell_item.image_type == "consumable")
+        //Debug.Log(cell_item.image_type);
+        if(cell_item.name == "")
         {
- 
-
+            //null cell
+        }
+        else if (cell_item.image_type == "consumable")
+        {
             transform.FindChild("Image").GetComponent<Image>().overrideSprite = (Sprite)Resources.Load("art/sword.png");
         }
         else if (cell_item.image_type == "sword")
@@ -63,6 +64,6 @@ public class Inventory_cell : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        update_inventory_cells();
     }
 }
