@@ -50,6 +50,7 @@
      <Compile Include="Assets\src\Inventory_cell.cs" />
      <Compile Include="Assets\src\Item.cs" />
      <Compile Include="Assets\src\Player.cs" />
+     <Compile Include="Assets\src\inventory_tile_mouse_interaction.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
