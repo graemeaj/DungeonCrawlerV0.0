@@ -10,16 +10,4 @@ public class Item : MonoBehaviour {
     public string image_type = "";
 
 
-
-
-
-    // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

@@ -12,18 +12,17 @@ public class Inventory_cell : MonoBehaviour {
     public int array_x;
     public int array_y;
 
+    public string imageTypeName;
 
 
     public void update_inventory_cells()
     {
-        //Debug.Log(cell_item.image_type);
-        if(cell_item.name == "")
+        cell_item = player.backpack.inventory_store[array_x, array_y];
+
+        if (cell_item.image_type == "")
         {
             transform.FindChild("Image").GetComponent<Image>().color = new Color32(155, 155, 155, 255);
-        }
-        else if (cell_item.image_type == "consumable")
-        {
-            transform.FindChild("Image").GetComponent<Image>().overrideSprite = (Sprite)Resources.Load("art/sword.png");
+            transform.FindChild("Image").GetComponent<Image>().sprite = null;
         }
         else if (cell_item.image_type == "sword")
         {
@@ -46,7 +45,7 @@ public class Inventory_cell : MonoBehaviour {
             transform.FindChild("Image").GetComponent<Image>().sprite = Resources.Load("art/dagger", typeof(Sprite)) as Sprite;
         }
         //transform.FindChild("Image").GetComponent<Image>().color = new Color32(155, 155, 155, 255);
-
+        imageTypeName = cell_item.image_type;
         
     }
 
@@ -55,7 +54,6 @@ public class Inventory_cell : MonoBehaviour {
         player_g_o = GameObject.Find("/Player");
         player = player_g_o.GetComponent<Player>();
         //Debug.Log(GameObject.Find("Player").GetComponent<Player>().backpack.inventory_store[0, 0].type);
-        cell_item = player.backpack.inventory_store[array_x, array_y];
         update_inventory_cells();
 
 
@@ -63,7 +61,7 @@ public class Inventory_cell : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void LateUpdate () {
+	void FixedUpdate () {
         update_inventory_cells();
     }
 }

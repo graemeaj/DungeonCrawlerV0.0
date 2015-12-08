@@ -58,19 +58,15 @@ public class Inventory : MonoBehaviour {
                     j = 7;
                     //Debug.Log("a slot was free");
                 }
+                else if(i >= 4 && j >= 7)
+                {
+                    Debug.Log("inventory full");
+                }
             }
         }
+
         
     }
 
 
-
-    void Start () {
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
